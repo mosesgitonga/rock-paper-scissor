@@ -17,11 +17,19 @@
         let computerSelection = getComputerChoice();
         let playerSelection = prompt("Enter chice: ");
         function playRound(playerSelection, ComputerSelection) {
-            
-            return [playerSelection, computerSelection]
+          
+            if (computerSelection === 'rock' && playerSelection === 'paper') {
+                return 'You win: Paper beats rock'
+            } else if(computerSelection === 'scissor' && playerSelection === 'rock') {
+                return 'You win: rock crushes scissors'
+            } else if(computerSelection === 'paper' && playerSelection === 'scissors') {
+                return 'You win: Scissors cuts paper'
+            } else if (computerSelection == playerSelection) {
+                return `Draw: computer selection ->${computerSelection} vs player selection ->${playerSelection}`
+            } else {
+                return `You lost:  ${computerSelection} crushes ${playerSelection}`
+            }
         }
-
-        playRound()
 
     </script>
 </body>

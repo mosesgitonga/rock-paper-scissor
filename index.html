@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getComputerChoice() {
+            let choices = ['rock', 'paper', 'scissor'];
+            let randomChoice = choices[Math.floor(Math.random() * choices.length)];
+            return randomChoice
+        }
+
+        getComputerChoice()
+        let computerSelection = getComputerChoice();
+        let playerSelection = prompt("Enter chice: ");
+        function playRound(playerSelection, ComputerSelection) {
+            
+            return [playerSelection, computerSelection]
+        }
+
+        playRound()
+
+    </script>
+</body>
+</html>

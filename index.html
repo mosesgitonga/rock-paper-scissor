@@ -4,19 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
 </head>
 <body>
+    <div class="header">
+        <h1 id="header">Rock Paper Scissor</h1>
+    </div>
+    <div>
+        <div>Computer score: </div>
+        <div>Your score: </div>
+    </div>
+    <div class="items" id="player-text">player: </div>
+    <div class="items" id="computer-text">computer: </div>
+    <div class="items" id="result-text">Result: </div>
+
+    <div class="buttons">
+        <button class="choiceBtn">rock</button>
+        <button class="choiceBtn">paper</button>
+        <button class="choiceBtn">scissor</button>
+    </div>
     <script>
+        playerText = document.querySelector('#player-text');
+        computerText = document.querySelector('#computer-text');
+        resultText = document.querySelector('#result-text')
+        choiceBtns = document.querySelectorAll('.choiceBtn')
+        let player;
+        let computer;
+        let result;
+
+
+        choiceBtns.forEach(button => button.addEventListener('click', () => {
+            player = button.textContent;
+            computer = getComputerChoice()
+            result = playRound(player, computer)
+            playerText.textContent = `Player choice:   ${player}`
+            computerText.textContent = `Computer Choice:   ${computer}`
+            resultText.textContent = `Result:   ${result}`
+        }))
+
         function getComputerChoice() {
             let choices = ['rock', 'paper', 'scissor'];
             let randomChoice = choices[Math.floor(Math.random() * choices.length)];
             return randomChoice
         }
+        //computerSelection = getComputerChoice()
+        //playerSelection = player
 
-        getComputerChoice()
-        let computerSelection = getComputerChoice();
-        let playerSelection = prompt("Enter chice: ");
-        function playRound(playerSelection, ComputerSelection) {
+        function playRound(playerSelection, computerSelection) {
           
             if (computerSelection === 'rock' && playerSelection === 'paper') {
                 return 'You win: Paper beats rock'
@@ -25,12 +59,12 @@
             } else if(computerSelection === 'paper' && playerSelection === 'scissors') {
                 return 'You win: Scissors cuts paper'
             } else if (computerSelection == playerSelection) {
-                return `Draw: computer selection ->${computerSelection} vs player selection ->${playerSelection}`
+                return `Draw: Try again`
             } else {
                 return `You lost:  ${computerSelection} crushes ${playerSelection}`
             }
         }
-
+        
     </script>
 </body>
 </html>

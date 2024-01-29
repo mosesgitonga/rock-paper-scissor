@@ -1,0 +1,42 @@
+body {
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.items {
+    display: flex;
+    justify-content: center;
+    align-items:first baseline;
+}
+#player-text,  #computer-text, #result-text  {
+    background-color: rgb(231, 19, 19);
+    margin-bottom: 10px;
+    padding: 10px;
+    color: rgb(234, 235, 230)
+}
+
+#result-text {
+    background-color: rgb(238, 231, 228);
+    color:rgb(231, 11, 11)
+}
+
+.buttons {
+    background-color:rgb(231, 19, 19);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: first baseline;
+    margin-top: 30px;
+}
+
+.choiceBtn {
+    margin: 30px;
+    border-radius: 50%;
+    border-width: 40px;
+}
